@@ -32,34 +32,35 @@ Here I post all of the random other hobby things I do when the ADHD leads the wa
 <h2>Painted Nighthaunts</h2>
 
 <div class="project-images">
-<div class="media-box">
-    <video controls>
+  <div class="media-box">
+    <video class="lightbox-media" data-type="video" muted>
       <source src="hobby_images/RotateNighthauntChainghast.mp4" type="video/mp4">
       Din browser understøtter ikke video-tagget.
     </video>
   </div>
 
   <div class="media-box">
-    <img src="hobby_images/Awlrach.jpg" alt="Awlrach">
+    <img class="lightbox-media" data-type="image" src="hobby_images/Awlrach.jpg" alt="Awlrach">
   </div>
 
   <div class="media-box">
-    <img src="hobby_images/BlackCoach.jpg" alt="Black Coach">
+    <img class="lightbox-media" data-type="image" src="hobby_images/BlackCoach.jpg" alt="Black Coach">
   </div>
 
   <div class="media-box">
-    <img src="hobby_images/CravenKing.jpg" alt="Craven King">
+    <img class="lightbox-media" data-type="image" src="hobby_images/CravenKing.jpg" alt="Craven King">
   </div>
 
   <div class="media-box">
-    <img src="hobby_images/LadyOlynder.jpg" alt="Lady Olynder">
+    <img class="lightbox-media" data-type="image" src="hobby_images/LadyOlynder.jpg" alt="Lady Olynder">
   </div>
 
 </div>
 
 <!-- Lightbox overlay -->
-<div id="lightbox" onclick="this.style.display='none'">
+<div id="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img">
+  <video id="lightbox-video" controls style="display:none;"></video>
 </div>
 
 <p>
@@ -77,16 +78,36 @@ Was really fun and I am personally really satisfied with the results. I am no Go
 
 </div>
 <script>
-const boxes = document.querySelectorAll('.media-box img');
+const mediaElements = document.querySelectorAll('.lightbox-media');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
+const lightboxVideo = document.getElementById('lightbox-video');
 
-boxes.forEach(img => {
-  img.addEventListener('click', e => {
+mediaElements.forEach(el => {
+  el.addEventListener('click', e => {
+    const type = e.target.dataset.type;
+
+    if(type === 'image') {
+      lightboxImg.src = e.target.src;
+      lightboxImg.style.display = 'block';
+      lightboxVideo.style.display = 'none';
+    } else if(type === 'video') {
+      const source = e.target.querySelector('source').src;
+      lightboxVideo.src = source;
+      lightboxVideo.style.display = 'block';
+      lightboxImg.style.display = 'none';
+      lightboxVideo.play();
+    }
+
     lightbox.style.display = 'flex';
-    lightboxImg.src = e.target.src;
   });
 });
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+  lightboxVideo.pause();
+  lightboxVideo.currentTime = 0;
+}
 </script>
 </body>
 
