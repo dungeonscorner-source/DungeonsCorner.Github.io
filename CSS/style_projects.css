@@ -38,11 +38,37 @@
 }
 
 /* Galleri */
+/* Galleri med 5 kolonner på desktop */
 .project-images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(5, 1fr); /* 5 kolonner på store skærme */
   gap: 15px;
   margin-top: 20px;
+}
+
+/* Responsiv tilpasning */
+@media (max-width: 1200px) {
+  .project-images {
+    grid-template-columns: repeat(4, 1fr); /* 4 kolonner på mellemstore skærme */
+  }
+}
+
+@media (max-width: 992px) {
+  .project-images {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolonner på små skærme */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-images {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolonner på tablets */
+  }
+}
+
+@media (max-width: 500px) {
+  .project-images {
+    grid-template-columns: 1fr; /* 1 kolonne på mobil */
+  }
 }
 
 .media-box {
