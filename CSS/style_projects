@@ -1,0 +1,16 @@
+/* Container for billeder/video */
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+/* Billeder og video */
+.project-images img,
+.project-images video {
+  width: 100%;       /* fylder containerens bredde */
+  height: auto;      /* bevarer proportioner */
+  object-fit: contain;/* forhindrer strækning */
+  border-radius: 5px;/* pæn kant */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* let skygge */
+}
