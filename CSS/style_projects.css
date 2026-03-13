@@ -1,14 +1,55 @@
+/* Side container */
+.container {
+  max-width: 1000px;
+  margin: 40px auto; /* centrerer og giver luft */
+  padding: 0 20px;
+}
+
+/* Titel øverst */
+.page-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #ffd700; /* gylden farve, kan justeres */
+  text-shadow: 1px 1px 4px #000; /* giver lidt dybde */
+}
+
+/* Projekt boks */
+.project-box {
+  background: #2a2a2a; /* lysere tone end siden */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  margin-bottom: 40px;
+}
+
+/* Projekt overskrift */
+.project-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+/* Projekt tekst */
+.project-box p {
+  line-height: 1.6;
+  margin-top: 20px;
+  text-align: justify;
+}
+
+/* Galleri */
 .project-images {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
+  margin-top: 20px;
 }
 
 .media-box {
   width: 100%;
-  height: 250px; /* alle bokse samme højde */
+  height: 250px;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   cursor: pointer;
   background: #111;
@@ -21,7 +62,7 @@
 .media-box video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fylder boxen, bevarer proportioner */
+  object-fit: cover;
 }
 
 /* Lightbox */
@@ -37,7 +78,8 @@
   cursor: pointer;
 }
 
-#lightbox img {
+#lightbox img,
+#lightbox video {
   max-width: 90%;
   max-height: 90%;
 }
