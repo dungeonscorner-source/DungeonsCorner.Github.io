@@ -1,16 +1,43 @@
-/* Container for billeder/video */
 .project-images {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  gap: 15px;
 }
 
-/* Billeder og video */
-.project-images img,
-.project-images video {
-  width: 100%;       /* fylder containerens bredde */
-  height: auto;      /* bevarer proportioner */
-  object-fit: contain;/* forhindrer strækning */
-  border-radius: 5px;/* pæn kant */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* let skygge */
+.media-box {
+  width: 100%;
+  height: 250px; /* alle bokse samme højde */
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-box img,
+.media-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fylder boxen, bevarer proportioner */
+}
+
+/* Lightbox */
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
 }
