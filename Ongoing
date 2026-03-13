@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Ongoing Projects</title>
+
+<style>
+body{
+font-family: 'Cinzel', serif;
+background:#1a1a1a;
+color:white;
+margin:0;
+}
+
+.container{
+width:1000px;
+margin:auto;
+padding:40px;
+}
+
+img{
+max-width:100%;
+border-radius:10px;
+}
+
+a{
+color:#ff7a00;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Ongoing Projects</h1>
+
+<p>
+Here I post projects that are still in development.
+</p>
+
+<img src="exampleproject.jpg">
+
+<p>
+Description of the project.
+</p>
+
+<p>
+<a href="index.html">← Back to main page</a>
+</p>
+
+</div>
+
+</body>
+
+</html>
