@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <title>Ongoing Projects</title>
-
+<link rel="stylesheet" href="CSS/style_projects.css">
 <style>
 body{
 font-family: 'Cinzel', serif;
@@ -13,43 +13,13 @@ background:#1a1a1a;
 color:white;
 margin:0;
 }
-
-.container{
-width:1000px;
-margin:auto;
-padding:40px;
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+background:#111;
 }
 
-img{
-max-width:100%;
-border-radius:10px;
-}
-
-a{
-color:#ff7a00;
-}
-.project-box{
-background:#2b2b2b;
-padding:25px;
-border-radius:10px;
-margin-bottom:30px;
-}
-
-.project-box h2{
-margin-top:0;
-}
-
-.project-images{
-display:grid;
-grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
-gap:10px;
-margin:15px 0;
-}
-
-.project-images img{
-width:100%;
-border-radius:6px;
-}
 </style>
 
 </head>
@@ -64,18 +34,75 @@ border-radius:6px;
 Here I post projects that are still in development.
 </p>
 
-<img src="exampleproject.jpg">
-
+<div class="project-box">
+    
+<h2>Hero Trails</h2>
+    
 <p>
-Description of the project.
+A small and simple Visual Card driven TTRPG for small ages all the way down to 6 years old.
+  This game system is being designed because i have small children myself and want to introduce them to TTRPG faster than normal.
+  So why not use Cards with a visual style to help drive home a story and have simple rules to control event and encounters. 
 </p>
+    
+<div class="project-images">
+  <div class="media-box">
+      <img class="lightbox-media" data-type="image" src="ongoing_images/HeroTrailCleric.png" alt="Cleric concept">
+  </div>
+  
+<div class="project-images">
+  <div class="media-box">
+      <img class="lightbox-media" data-type="image" src="ongoing_images/HeroTrailDragoling.png" alt="Dragoling concept">
+  </div>
+</div>
+
+<!-- Lightbox overlay -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+  <video id="lightbox-video" controls style="display:none;"></video>
+</div>
+    
+</div>
 
 <p>
 <a href="index.html">← Back to main page</a>
 </p>
 
 </div>
+  <script>
+const mediaElements = document.querySelectorAll('.lightbox-media');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxVideo = document.getElementById('lightbox-video');
 
+mediaElements.forEach(el => {
+  el.addEventListener('click', e => {
+    const type = e.target.dataset.type;
+
+    if(type === 'image') {
+      lightboxImg.src = e.target.src;
+      lightboxImg.style.display = 'block';
+      lightboxVideo.style.display = 'none';
+    } else if(type === 'video') {
+      const source = e.target.querySelector('source').src;
+      lightboxVideo.src = source;
+      lightboxVideo.style.display = 'block';
+      lightboxImg.style.display = 'none';
+      lightboxVideo.play();
+    }
+
+    lightbox.style.display = 'flex';
+  });
+});
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+  lightboxVideo.pause();
+  lightboxVideo.currentTime = 0;
+}
+</script>
+<footer>
+© Dungeons Corner
+</footer>
 </body>
 
 </html>
