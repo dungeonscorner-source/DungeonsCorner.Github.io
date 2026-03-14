@@ -1,0 +1,16 @@
+body {
+    min-height: 100vh;       /* Fylder hele skærmhøjden */
+    display: flex;            /* Flex-layout */
+    flex-direction: column;   /* Elementer stablet lodret */
+}
+
+.container {
+    flex: 1;                  /* Fylder al plads mellem header og footer */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #111;
+}
