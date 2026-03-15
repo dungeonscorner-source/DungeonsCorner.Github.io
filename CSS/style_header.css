@@ -5,12 +5,12 @@
   gap: 10px;                /* afstand mellem logo og tekst */
   
   background: #3a332e;      /* din baggrundsfarve */
-  padding: 30px;            /* indvendig afstand */
-  font-size: 40px;          /* tekststørrelse */
+  padding: 15px;            /* indvendig afstand */
+  font-size: 30px;          /* tekststørrelse */
   color: white;             /* vigtig, hvis baggrund er mørk */
 }
 
 .header-logo {
-  width: 40px;     /* eller den størrelse du ønsker */
+  width: 50px;     /* eller den størrelse du ønsker */
   height: auto;
 }
