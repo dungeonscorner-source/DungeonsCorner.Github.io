@@ -7,7 +7,7 @@
   background: #3a332e;      /* din baggrundsfarve */
   padding: 10px;            /* indvendig afstand */
   font-size: 30px;          /* tekststørrelse */
-  color: white;             /* vigtig, hvis baggrund er mørk */
+  color: #f2e6c9;             /* vigtig, hvis baggrund er mørk */
 }
 
 .header-logo {
