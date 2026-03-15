@@ -4,6 +4,12 @@ body {
     flex-direction: column;   /* Elementer stablet lodret */
 }
 
+header{
+background:#3a332e;
+padding:30px;
+text-align:center;
+font-size:40px;
+}
 .container {
     flex: 1;                  /* Fylder al plads mellem header og footer */
 }
